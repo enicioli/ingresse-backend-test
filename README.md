@@ -1,5 +1,8 @@
 # Ingresse Backend Test
 
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/enicioli/ingresse-backend-test/badges/quality-score.png?b=master&s=ec126bff55ba64a56af3011ad962be8c068f833a)](https://scrutinizer-ci.com/g/enicioli/ingresse-backend-test/?branch=master)
+[![Build Status](https://scrutinizer-ci.com/g/enicioli/ingresse-backend-test/badges/build.png?b=master&s=3efb8637d90e094e98271ed4d2f85a577124b738)](https://scrutinizer-ci.com/g/enicioli/ingresse-backend-test/build-status/master)
+
 ## Dependencies
 - [Docker](https://www.docker.com/)
 
@@ -42,6 +45,7 @@ GET     /interest/:interest_id         (Retrieves a specific event interest)
 DELETE  /interest/:interest_id         (Removes a specific event interest)
 GET     /interest/email/:email         (Retrieves event interests for a specific customer by their email)
 ```
+[Postman](https://www.getpostman.com/) collection with some examples in [this file](https://github.com/enicioli/ingresse-backend-test/blob/master/resources/ingresse-backend-test.postman_collection.json).
 
 #### Main technologies
 - [Docker](https://www.docker.com/)

@@ -1,0 +1,258 @@
+{
+	"info": {
+		"_postman_id": "21da7aa3-916a-442f-9e8b-6a070d463fd4",
+		"name": "ingresse-backend-test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Event",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"São Paulo Oktoberfest\",\n    \"place\": {\n        \"lng\": -46.6958256,\n        \"lat\": -23.6153033\n    },\n    \"sessions\": [\n        \"2020-09-17T17:00:00-03:00\",\n        \"2020-09-18T17:00:00-03:00\",\n        \"2020-09-19T13:00:00-03:00\",\n        \"2020-09-20T13:00:00-03:00\",\n        \"2020-09-24T17:00:00-03:00\",\n        \"2020-09-25T17:00:00-03:00\",\n        \"2020-09-26T13:00:00-03:00\",\n        \"2020-09-27T13:00:00-03:00\",\n        \"2020-10-01T17:00:00-03:00\",\n        \"2020-10-02T17:00:00-03:00\",\n        \"2020-10-03T13:00:00-03:00\",\n        \"2020-10-04T13:00:00-03:00\"\n    ],\n    \"tags\": [\n        \"gastronomia\",\n        \"cerveja\"\n    ]\n}"
+				},
+				"url": {
+					"raw": "localhost:5000/event",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"event"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Event",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Oktoberfest São Paulo\"\n}"
+				},
+				"url": {
+					"raw": "localhost:5000/event/{event_id}",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"event",
+						"{event_id}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Event",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Oktoberfest São Paulo\",\n    \"place\": {\n        \"lng\": -46.6958256,\n        \"lat\": -23.6153033\n    },\n    \"sessions\": [\n        \"2020-09-17T17:00:00-03:00\",\n        \"2020-09-18T17:00:00-03:00\",\n        \"2020-09-19T13:00:00-03:00\",\n        \"2020-09-20T13:00:00-03:00\",\n        \"2020-09-24T17:00:00-03:00\",\n        \"2020-09-25T17:00:00-03:00\",\n        \"2020-09-26T13:00:00-03:00\",\n        \"2020-09-27T13:00:00-03:00\",\n        \"2020-10-01T17:00:00-03:00\",\n        \"2020-10-02T17:00:00-03:00\",\n        \"2020-10-03T13:00:00-03:00\",\n        \"2020-10-04T13:00:00-03:00\"\n    ],\n    \"tags\": [\n        \"gastronomia\",\n        \"cerveja\"\n    ]\n}"
+				},
+				"url": {
+					"raw": "localhost:5000/event/{event_id}",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"event",
+						"{event_id}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Event",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:5000/event/{event_id}",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"event",
+						"{event_id}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Event",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:5000/event/{event_id}",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"event",
+						"{event_id}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Search Events",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:5000/event/?q={\"$text\":{\"$search\":\"oktoberfest\"}}",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"event",
+						""
+					],
+					"query": [
+						{
+							"key": "q",
+							"value": "{\"$text\":{\"$search\":\"oktoberfest\"}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Interest",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"customer@ingresse.com\"\n}"
+				},
+				"url": {
+					"raw": "localhost:5000/interest/event/{event_id}",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"interest",
+						"event",
+						"{event_id}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Interest",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "localhost:5000/interest/{interest_id}",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"interest",
+						"{interest_id}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Interest",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "localhost:5000/interest/{interest_id}",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"interest",
+						"{interest_id}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Customer Interests",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "localhost:5000/interest/email/{email}",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"interest",
+						"email",
+						"{email}"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
