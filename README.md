@@ -24,7 +24,9 @@ Two containers will be initialized:
 This sample data is based in this [files](https://github.com/enicioli/ingresse-backend-test/tree/master/resources) *_samples.json
 
 ### Tests
-@todo
+```
+sudo docker exec -it ingresse-backend-test-app sh -c "python3 -m pytest"
+```
 
 ## REST API
 ```
@@ -48,3 +50,4 @@ GET     /interest/email/:email         (Retrieves event interests for a specific
 - [Flask](https://palletsprojects.com/p/flask/)
 - [MongoFrames MongoDB ODM](http://mongoframes.com/)
 - [JSON Schema](http://json-schema.org/)
+- [pytest](https://docs.pytest.org/)

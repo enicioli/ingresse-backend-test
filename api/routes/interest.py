@@ -53,4 +53,4 @@ def route_delete_interest(interest_id: str):
 @InterestController.route('/email/<email>', methods=['GET'])
 def route_get_customer_interests(email: str):
     interests = InterestModel.get_interests_by_email(email)
-    return jsonify(list(map(lambda interest: interest.event.to_json_type(), interests)))
+    return jsonify(list(map(lambda interest: interest.to_json_type(), interests)))
