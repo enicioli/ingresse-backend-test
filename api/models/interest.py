@@ -10,7 +10,7 @@ class InterestModel:
     @staticmethod
     def create_interest(data: dict,
                         event: EventDocument):
-        interest = InterestDocument(data)
+        interest = InterestDocument(data.copy())
         interest.event = event
         interest.insert()
         return interest

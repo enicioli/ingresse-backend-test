@@ -20,9 +20,9 @@ class InterestDocument(Frame):
     }
 
     _indexes = [
-        IndexModel([('event._id', 1), ('email', 1)], unique=True),
-        IndexModel([('email', pymongo.HASHED)]),
-        IndexModel([('created', pymongo.ASCENDING)])
+        IndexModel([('email', 1)]),
+        IndexModel([('created', pymongo.ASCENDING)]),
+        IndexModel([('event', 1), ('email', 1)], unique=True)
     ]
 
 

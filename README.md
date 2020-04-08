@@ -11,7 +11,7 @@ git clone https://github.com/enicioli/ingresse-backend-test.git
 cd ingresse-backend-test
 ```
 ```shell script
-sudo docker-compose build && sudo docker-compose up -d
+sudo docker-compose up -d --build
 ```
 Two containers will be initialized:
 - ingresse-backend-test-mongo (MongoDB)
@@ -20,11 +20,26 @@ Two containers will be initialized:
 #### Database
 ![Relationship Entity Diagram](https://github.com/enicioli/ingresse-backend-test/blob/master/resources/DER.jpg)
 
+>When the containers are running in development mode, some sample data is imported to the database.
+This sample data is based in this [files](https://github.com/enicioli/ingresse-backend-test/tree/master/resources) *_samples.json
+
 ### Tests
 @todo
 
 ## REST API
-@todo
+```
+POST    /event                         (Creates a new event)
+GET     /event/:event_id               (Retrieves a specific event)
+PATCH   /event/:event_id               (Updates a specific event - partial)
+PUT     /event/:event_id               (Updates a specific event - full)
+DELETE  /event/:event_id               (Removes a specific event)
+GET     /event?q=:query                (Searches events filtered by a json formatted mongodb query)
+
+POST    /interest/event/:event_id      (Creates a new event interest)
+GET     /interest/:interest_id         (Retrieves a specific event interest)
+DELETE  /interest/:interest_id         (Removes a specific event interest)
+GET     /interest/email/:email         (Retrieves event interests for a specific customer by their email)
+```
 
 #### Main technologies
 - [Docker](https://www.docker.com/)

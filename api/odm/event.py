@@ -22,7 +22,8 @@ class EventDocument(Frame):
         'place',
         'tags',
         'created',
-        'modified'
+        'modified',
+        'interested'
     }
 
     _default_projection = {

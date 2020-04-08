@@ -8,7 +8,7 @@ class EventModel:
 
     @staticmethod
     def create_event(data: dict):
-        event = EventDocument(data)
+        event = EventDocument(data.copy())
         event.insert()
         return event
 
