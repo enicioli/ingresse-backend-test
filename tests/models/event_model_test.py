@@ -1,7 +1,7 @@
 import json
 import pytest
 import unittest
-from bson import ObjectId
+from bson import ObjectId, json_util
 
 from tests import setup
 from api.models.event import EventModel
@@ -30,7 +30,7 @@ class EventModelTest(unittest.TestCase):
 
     @pytest.mark.usefixtures('fixture_event_document', 'fixture_event_update_body')
     def test_3_update_event(self):
-        update_event = json.loads(self.event_update_body)
+        update_event = json_util.loads(self.event_update_body)
         event = EventModel.update_event(self.event, update_event)
 
         for key in update_event:

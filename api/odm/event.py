@@ -33,6 +33,7 @@ class EventDocument(Frame):
     _indexes = [
         IndexModel([('name', pymongo.TEXT)]),
         IndexModel([('place', pymongo.GEO2D)]),
+        IndexModel([('sessions', 1)]),
         IndexModel([('tags', 1)]),
         IndexModel([('created', pymongo.ASCENDING)]),
         IndexModel([('modified', pymongo.ASCENDING)])

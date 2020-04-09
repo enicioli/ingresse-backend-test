@@ -38,7 +38,7 @@ GET     /event/:event_id               (Retrieves a specific event)
 PATCH   /event/:event_id               (Updates a specific event - partial)
 PUT     /event/:event_id               (Updates a specific event - full)
 DELETE  /event/:event_id               (Removes a specific event)
-GET     /event?q=:query                (Searches events filtered by a json formatted mongodb query)
+GET     /event?q=:query                (Searches events filtered by a json formatted mongodb query - bson)
 
 POST    /interest/event/:event_id      (Creates a new event interest)
 GET     /interest/:interest_id         (Retrieves a specific event interest)

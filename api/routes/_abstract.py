@@ -6,8 +6,8 @@ from bson import ObjectId
 class AbstractRoute(ABC):
 
     @staticmethod
-    def bad_request():
-        return jsonify({'message': 'Bad request'}), 400
+    def bad_request(message=None):
+        return jsonify({'message': '{}'.format(message or 'Bad request')}), 400
 
     @staticmethod
     def not_found():

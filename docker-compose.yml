@@ -4,8 +4,8 @@ services:
     image: mongo
     container_name: ingresse-backend-test-mongo
     restart: always
-    ports:
-      - 27017:27017
+    #ports:
+    #  - 27017:27017
     environment:
       MONGO_INITDB_ROOT_USERNAME: root
       MONGO_INITDB_ROOT_PASSWORD: root
@@ -15,8 +15,8 @@ services:
     restart: always
     ports:
       - 5000:80
-    volumes:
-      - .:/app
+    #volumes:
+    #  - .:/app
     depends_on:
       - mongo
     environment:

@@ -32,8 +32,16 @@ class EventSchema(AbstractSchema):
             "sessions": {
                 "type": "array",
                 "items": {
-                    "type": "string",
-                    "format": "date-time",
+                    "type": "object",
+                    "properties": {
+                        "$date": {
+                            "type": "string",
+                            "format": "date-time",
+                        },
+                    },
+                    "required": [
+                        "$date",
+                    ],
                 },
                 "minItems": 1,
             },
@@ -42,6 +50,7 @@ class EventSchema(AbstractSchema):
                 "items": {
                     "type": "string",
                 },
+                "minItems": 1,
             },
         },
         "required": [

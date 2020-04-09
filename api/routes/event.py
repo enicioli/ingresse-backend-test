@@ -12,7 +12,7 @@ def route_create_event():
     json_data = request.get_json(force=True)
     result, message = EventSchema.validate(json_data)
     if result is False:
-        return AbstractRoute.bad_request()
+        return AbstractRoute.bad_request(message)
 
     event = EventModel.create_event(json_data)
     return jsonify(event.to_json_type()), 201
@@ -35,7 +35,7 @@ def route_update_event(event_id: str):
         result, message = EventSchema.validate(json_data)
 
     if result is False:
-        return AbstractRoute.bad_request()
+        return AbstractRoute.bad_request(message)
 
     event = EventModel.update_event(event, json_data)
     return jsonify(event.to_json_type())
@@ -69,7 +69,6 @@ def route_delete_event(event_id: str):
 
 @EventController.route('/', methods=['GET'])
 def route_search_events():
-    filters = json.loads(request.args.get('q'))
-    events = EventModel.search(filters)
-
+    query = json.loads(request.args.get('q'))
+    events = EventModel.search(query)
     return jsonify(list(map(lambda event: event.to_json_type(), events)))

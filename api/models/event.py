@@ -1,5 +1,5 @@
 from api.odm.event import EventDocument
-from bson.objectid import ObjectId
+from bson import ObjectId, json_util
 
 
 class EventModel:
@@ -8,6 +8,7 @@ class EventModel:
 
     @staticmethod
     def create_event(data: dict):
+        data = json_util.loads(json_util.dumps(data))
         event = EventDocument(data.copy())
         event.insert()
         return event
@@ -15,6 +16,7 @@ class EventModel:
     @staticmethod
     def update_event(event: EventDocument,
                        data: dict):
+        data = json_util.loads(json_util.dumps(data))
         for key, value in data.items():
             event.__setattr__(key, value)
 
@@ -30,5 +32,6 @@ class EventModel:
         return event.delete()
 
     @staticmethod
-    def search(filters: dict):
-        return EventDocument.many(filters)
+    def search(query: dict):
+        query = json_util.loads(json_util.dumps(query))
+        return EventDocument.many(query)

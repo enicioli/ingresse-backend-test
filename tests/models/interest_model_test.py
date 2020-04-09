@@ -59,7 +59,6 @@ class InterestModelTest(unittest.TestCase):
         event._id = ObjectId()
 
         interest_data = json.loads(setup.read_fixture_file('interest_post_body.json'))
-
         request.interest = InterestModel.create_interest(interest_data, event=event)
 
 

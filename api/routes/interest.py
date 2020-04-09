@@ -15,7 +15,7 @@ def route_create_interest(event_id: str):
     json_data = request.get_json(force=True)
     result, message = InterestSchema.validate(json_data)
     if result is False:
-        return AbstractRoute.bad_request()
+        return AbstractRoute.bad_request(message)
 
     event = EventModel.get_event_by_id(event_id)
     if event is None:
